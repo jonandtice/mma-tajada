@@ -7,3 +7,9 @@ This repository holds a collection of MMA ([Musical Midi Accompaniment](https://
 Except for the _songs_ folder (that can go wherever you want), the folders in here are meant to follow the same structure as the default distribution of mma. The folders in _lib_ (grooves) can go in mma's _lib_ folder and the folders in _includes_ (patterns) can go in mma's _include_ folder.
 
 Usage and more detailed descriptions of the grooves, songs, and patterns are in each folder.
+
+## MMA Tips
+
+* mma -P
+* vs code highlighting
+* etc
