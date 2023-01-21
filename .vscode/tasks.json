@@ -12,7 +12,7 @@
         {
             "label": "output midi",
             "type": "shell",
-            "command": "mma ${relativeFile} -f ${relativeFileDirname}/${fileBasenameNoExtension}.mid",
+            "command": "mma ${relativeFile}",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
