@@ -1,0 +1,23 @@
+// Sail Away Ladies
+// from Old Time Fiddle for the Complete Ignoramus by Wayne Erbsen
+
+Tempo 96
+
+Groove Metronome2-4
+z * 2
+
+// Section A
+Groove OldTime3
+1 D
+2 D A D /
+3 D / A D
+4 D A D /
+
+//Section B
+Repeat
+Groove OldTime1
+5 D / G /
+6 G / D /
+7 D / A /
+8 A / D /
+RepeatEnd

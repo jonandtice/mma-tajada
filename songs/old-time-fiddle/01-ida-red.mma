@@ -1,0 +1,19 @@
+// Ida Red
+// from Old Time Fiddle for the Complete Ignoramus by Wayne Erbsen
+
+Tempo 96
+
+Groove Metronome2-4
+z * 2
+
+Groove OldTime1
+Bass Groove OldTime1
+
+Repeat
+1 D / / Bm  [Ida Red, Ida Red,\r]
+2 D / A D   [I'm going crazy 'bout Ida Red.\r]
+3 D / / Bm  [Ida Red, Ida Blue,\r]
+4 D / A D   [I'm going crazy 'bout Ida too.\r]
+RepeatEnd
+Groove OldTimeEnding
+5 D

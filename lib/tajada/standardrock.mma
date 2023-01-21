@@ -1,0 +1,330 @@
+Timesig 4 4
+
+// Pattern definitions
+Begin Drum Define
+    D1  1 0 90
+    Do  1 0 58
+    Da  1 0 30
+    T4  D1 * 4
+    T8  D1 * 4; Do * 4 Shift 0.5
+    T16 T8; Da * 8 Shift 0.25
+    CR1 Do * 2; Do * 8 Shift 0.5
+    CR2 D1 Shift 3
+    CH  D1 Shift 1
+    HH1 1.0 0 93;         2.0 0 88;         3.0 0 88;           4.0 0 88; 4.5 0 59
+    PH1          1.5 0 58;         2.5 0 58;          3.5 0 58
+    HH2 1.0 0 93;         2.0 0 88;         3.0 0 88; 3.5 0 59; 4.0 0 88
+    PH2          1.5 0 58;         2.5 0 58;                              4.5 0 58
+    HH4 1.0 0 93;         2.0 0 88;         3.0 0 88; 3.5 0 59; 4.0 0 88; 4.5 0 59
+    PH4          1.5 0 58;         2.5 0 58
+    S1  2.0 0 100; 4.0 0 100
+    S2  S1; 2.75 0 50
+    S3  S2; 3.25 0 20
+    K1  1.0 0 101; 3.0 0 108
+    K2  1.0 0 108; 3.0 0 102; 3.5 0 90
+    K3  1.0 0 108; 3.0 0 108; 3.5 0 90; 4.5 0 72
+End
+
+Begin Bass Define
+    Ba  1 4 1 90; 2.5 16 1 70; 3.0 8 1 90; 3.5 8 1 70
+    B0  1.0 2 1 90 * 4; 1.0 2 1 70 * 4 Shift 0.5
+    B1  Ba; 4.5 16 5- 60
+    B2  Ba; 4.0 8 3- 60; 4.5 8 5- 70
+    Bb  1 8 1 90; 1.5 8 1 60; 2.5 16 1 70; 3.0 8 1 90
+    B3  Bb; 3.5 8 1 70; 4.5 8 5- 60
+    B4  Bb; 3.5 8 1 70; 4.0 8 3- 60; 4.5 8 5- 70
+    B5  Bb; 3.5 8 5- 70; 4.0 8 6- 60; 4.5 8 5- 70
+    Bc  1.0 8 1 90; 1.5 8 1 70; 2.0 4. 1 90; 2.75 16 1 90; 3.25 16 1 60; 3.5 8 1 70; 4.0 8 1 90
+    B6  Bc; 4.5 8 5- 70
+    B7  Bc; 4.5 16 5- 70; 4.75 16 5- 30
+    BC8 1.0 1 1 70 * 8; 1.0 1 5 45 * 8; 1.0 1 1+ 60 * 8;
+End
+
+// Set chord shapes so the strums actually sound good
+// These seem to apply to all the plectrum tracks and SeqClear doesn't affect them (good?)
+Begin Plectrum Shape
+    C   - 3 2 0 1 0
+    A   - 0 2 2 2 0
+    G   3 - 0 0 0 3
+    E   0 2 2 1 0 0
+    D   - - 0 2 3 2
+    Am  - 0 2 2 1 0
+    F#m 2 4 4 2 2 2
+    Em  0 2 2 0 0 0
+    C#m - 4 6 6 5 4
+    Bm  - 2 4 4 3 2
+End
+
+// Patterns for guitar strumming
+Begin Plectrum Define
+    S1  1.0 +3 90; 1.5 -3 60; 2.0 +3 80; 2.5 -3 90; 3.5 -3 60; 4.0 +3 80; 4.5 -3 60
+    S2  S1; 2.1 0 0
+    S3  1.0 +3 90; 2.0 +3 80; 3.5 -3 60; 4.0 +3 80; 4.5 -3 60
+    S4  1.0 +3 90; 1.5 +3 80; 2.0 +3 80; 2.75 -3 70; 3.25 -3 70; 3.5 +3 80; 3.75 -3 70; 4.0 +3 80; 4.5 +3 80; 4.75 -3 70
+End
+
+Begin Chord Define
+    C1 1 1 90
+    C8 C1 * 8
+End
+
+// StandardRockA
+SeqClear
+SeqSize 4
+
+Begin Drum-Kick
+    Tone KickDrum1
+    Sequence K3
+    RTime -4,0
+    RVolume 10
+End
+Begin Drum-Snare
+    Tone SnareDrum1
+    Sequence S1
+    RTime 4
+    RVolume 10
+End
+Begin Drum-HH
+    Tone OpenHiHat
+    Sequence HH1 HH2 HH4
+    RTime 4
+    RVolume 10
+End
+Begin Drum-PH
+    Tone PedalHiHat
+    Sequence PH1 PH2 PH1 PH4
+    RTime 4
+    RVolume 10
+End
+Begin Drum-T
+    Tone Tambourine
+    Sequence T8
+    RTime 4
+    RVolume 10
+End
+
+Begin Bass
+    Voice FingeredBass
+    Sequence B1 B2 B1 B2
+    RTime 4
+    RVolume 5
+End
+
+Begin Plectrum
+    Voice SteelGuitar   // Basic acoustic guitar sound
+    Articulate 1        // Make sure "strings" don't ring past next chord change
+    Sequence S1
+    Volume p
+End
+
+Begin Chord-Organ
+    Voice Organ2
+    Sequence C1
+    Articulate 96
+    Octave 5
+    Voicing Mode=Optimal Center=8
+    Volume pppp
+End
+
+Begin Bass-PMGuitar
+    Voice MutedGuitar
+    Sequence BC8
+    Articulate 75
+    RTime 4
+    RVolume 5
+    Volume mp
+End
+
+DefGroove StandardRockA
+
+// StandardRockB
+SeqClear
+SeqSize 4
+
+Begin Drum-Kick
+    Tone KickDrum1
+    Sequence K1 K3 K1 K2
+    RTime -4,0
+    RVolume 10
+End
+Begin Drum-Snare
+    Tone SnareDrum1
+    Sequence S1
+    RTime 4
+    RVolume 10
+End
+Begin Drum-HH
+    Tone OpenHiHat
+    Sequence T8
+    RTime 4
+    RVolume 10
+End
+Begin Drum-T
+    Tone Tambourine
+    Sequence T8
+    RTime 4
+    RVolume 10
+End
+
+Begin Bass
+    Voice FingeredBass
+    Sequence B3 B4 B3 B5
+    RTime 4
+    RVolume 5
+End
+
+Begin Plectrum
+    Voice SteelGuitar   // Basic acoustic guitar sound
+    Articulate 1        // Make sure "strings" don't ring past next chord change
+    Sequence S2
+    Volume ppp
+End
+
+Begin Chord-Organ
+    Voice Organ2
+    Sequence C1
+    Articulate 96
+    Octave 5
+    Voicing Mode=Optimal Center=8
+    Volume ppp
+End
+
+DefGroove StandardRockB
+
+// StandardRockC
+SeqClear
+SeqSize 4
+
+Begin Drum-Kick
+    Tone KickDrum1
+    Sequence K2 K3 K2 K3
+    RTime -4,0
+    RVolume 10
+End
+Begin Drum-Snare
+    Tone SnareDrum1
+    Sequence S1
+    Volume +10%
+    RTime 4
+    RVolume 10
+End
+Begin Drum-PH
+    Tone PedalHiHat
+    Sequence T4
+    RTime 4
+    RVolume 10
+End
+Begin Drum-RB
+    Tone RideBell
+    Sequence T8
+    RTime 4
+    RVolume 10
+End
+Begin Drum-T
+    Tone Tambourine
+    Sequence T8
+    RTime 4
+    RVolume 10
+End
+
+Begin Bass
+    Voice FingeredBass
+    Sequence B0
+    RTime 4
+    RVolume 5
+End
+
+Begin Plectrum
+    Voice SteelGuitar   // Basic acoustic guitar sound
+    Articulate 1        // Make sure "strings" don't ring past next chord change
+    Sequence S3 S1 S3 S1
+    Accent {1 -10 2 25}{}{1 -10 2 25}{}
+    Volume ppp
+End
+
+Begin Chord-Organ
+    Voice Organ2
+    Sequence C1
+    Articulate 96
+    Octave 5
+    Voicing Mode=Optimal Center=8
+    Volume pp
+End
+
+DefGroove StandardRockC
+
+// StandardRockD
+SeqClear
+SeqSize 4
+
+Begin Drum-Kick
+    Tone KickDrum1
+    Sequence K2 K3 K2 K3
+    RTime -4,0
+    RVolume 10
+End
+Begin Drum-Snare
+    Tone SnareDrum1
+    Sequence S2 S3 S2 S3
+    Volume +10%
+    RTime 4
+    RVolume 10
+End
+Begin Drum-PH
+    Tone PedalHiHat
+    Sequence T4
+    Accent 1 -10 3 -10
+    RTime 4
+    RVolume 10
+End
+Begin Drum-CR1
+    Tone CrashCymbal1
+    Sequence CR1
+    Accent 1.0 10 1.5 -20 2.5 -20 3.0 10 3.5 -20 4.5 -20
+    RTime 4
+    RVolume 10
+End
+Begin Drum-CR2
+    Tone CrashCymbal2
+    Sequence CR2
+    RTime 4
+    RVolume 10
+End
+Begin Drum-CH
+    Tone ChineseCymbal
+    Sequence CH
+    Volume -15%
+    RTime 4
+    RVolume 10
+End
+Begin Drum-T
+    Tone Tambourine
+    Sequence T16
+    RTime 4
+    RVolume 10
+End
+
+Begin Bass
+    Voice FingeredBass
+    Sequence B6 B7 B6 B7
+    RTime 4
+    RVolume 5
+End
+
+Begin Plectrum
+    Voice SteelGuitar   // Basic acoustic guitar sound
+    Articulate 1        // Make sure "strings" don't ring past next chord change
+    Sequence S4
+    Volume pp
+End
+
+Begin Chord-Organ
+    Voice Organ2
+    Sequence C1
+    Articulate 96
+    Octave 5
+    Voicing Mode=Optimal Center=8
+    Volume p
+End
+
+DefGroove StandardRockD

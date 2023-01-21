@@ -1,0 +1,140 @@
+Timesig 4 4
+SeqSize 1
+
+Chord-RH Voice Piano1
+Bass-LH ChShare Chord-RH
+
+// Begin LeftRight
+SeqClear
+
+Begin Chord-RH
+    Octave 5
+    Sequence {
+        2 4 80;
+        4 4 80;
+    }
+End
+
+Begin Bass-LH
+    Octave 4
+    Sequence {
+        1.0 2 1 90;
+        3.0 2 1 90;
+        }
+End
+
+DefGroove LeftRight
+
+// Begin StraightBeat
+SeqClear
+
+Begin Chord-RH
+    Sequence {
+        1 4 90;
+        2 4 60;
+        3 4 90;
+        4 4 60;
+    }
+End
+
+Begin Bass-LH
+    Sequence {
+        1.0 2 1 90;
+        3.0 2 1 90;
+        }
+End
+
+DefGroove StraightBeat
+
+// Begin HalfBeatBounce
+SeqClear
+
+Begin Chord-RH
+    Sequence {
+        1 4 80;
+        2 4 60;
+        3 4 80;
+        4 4 60;
+    }
+End
+
+Begin Bass-LH
+    Sequence {
+        1.0 4+8 1 90;
+        2.5 8   1 80;
+        3.0 4+8 1 90;
+        4.5 8   1 80;
+        }
+End
+
+DefGroove HalfBeatBounce
+
+// Begin OomPah
+SeqClear
+
+Begin Chord-RH
+    Octave 5
+    Sequence {
+        1 4 80;
+        2 4 60;
+        3 4 80;
+        4 4 60;
+    }
+End
+
+Begin Bass-LH
+    Octave 4
+    Sequence {
+        1.0 2 1 90;
+        3.0 2 5- 70;
+        }
+End
+
+DefGroove OomPah
+
+// Begin SplitChord
+SeqClear
+
+Begin Chord-RH
+    Octave 5
+    Sequence {
+        1.0 4 0 80 80;
+        1.5 4 60 0 0;
+        2.0 4 0 80 80;
+        2.5 4 60 0 0;
+        3.0 4 0 80 80;
+        3.5 4 60 0 0;
+        4.0 4 0 80 80;
+        4.5 8 60 0 0;
+    }
+End
+
+Begin Bass-LH
+    Octave 4
+    Sequence {
+        1.0 1 1 90;
+        }
+End
+
+DefGroove SplitChord
+
+// Begin PianoTwist
+SeqClear
+
+Begin Chord-RH
+    Octave 5
+    Sequence {
+        1.0 1 60 * 8;
+    }
+End
+
+Begin Bass-LH
+    Octave 4
+    Sequence {
+        1.0 4. 1 90;
+        2.5 4. 3 80;
+        4.0 4  5 60;
+    }
+End
+
+DefGroove PianoTwist

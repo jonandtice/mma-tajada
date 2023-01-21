@@ -1,0 +1,25 @@
+// Camptown Races
+// from Old Time Fiddle for the Complete Ignoramus by Wayne Erbsen
+
+Tempo 96
+
+Groove Metronome2-4
+z * 2
+
+Groove OldTime1
+
+//Section A
+Repeat
+1 D
+2 A
+3 D
+4 A / D /
+RepeatEnd
+
+// Section B
+Repeat
+5 D
+6 G / D /
+7 D
+8 A / D /
+RepeatEnd

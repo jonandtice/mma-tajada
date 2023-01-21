@@ -1,0 +1,34 @@
+// Polly Put the Kettle On
+// from Old Time Fiddle for the Complete Ignoramus by Wayne Erbsen
+
+Tempo 60
+
+Groove Metronome2-4
+z * 2
+
+// Section A
+Repeat
+Groove OldTime1
+1 D / A /
+Bass Groove OldTimeABass4
+2 D / A D
+RepeatEnd
+
+// Section B
+Repeat
+Groove OldTime1
+3 D
+Bass Groove OldTimeABass4
+4 D / A D
+RepeatEnd
+
+//Section C
+Repeat
+Groove OldTime1
+5 D
+Bass Groove OldTimeABass4
+6 D / A D
+RepeatEnd
+
+Groove OldTimeEnding
+7 D

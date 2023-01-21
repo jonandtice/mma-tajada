@@ -1,0 +1,26 @@
+// Run Johnny Run
+// from Old Time Fiddle for the Complete Ignoramus by Wayne Erbsen
+
+Tempo 60
+
+Groove Metronome2-4
+z * 2
+
+// Section A
+Repeat
+Groove OldTime1
+1 D
+Bass Groove OldTimeABass4
+2 D / A D
+RepeatEnd
+
+// Section B
+Repeat
+Groove OldTime1
+3 D
+Bass Groove OldTimeABass4
+4 D / A D
+RepeatEnd
+
+Groove OldTimeEnding
+5 D

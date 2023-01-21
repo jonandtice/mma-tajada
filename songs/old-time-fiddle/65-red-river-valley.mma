@@ -1,0 +1,22 @@
+// Red River Valley
+// from Old Time Fiddle for the Complete Ignoramus by Wayne Erbsen
+
+Tempo 60
+
+Groove Metronome2-4
+z * 2
+
+Groove OldTime1
+
+Repeat
+1 G
+2 G
+3 G
+4 D
+5 G
+6 C
+7 D
+8 G
+RepeatEnd
+Groove OldTimeEnding
+9 G

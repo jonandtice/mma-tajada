@@ -1,0 +1,22 @@
+// Cumberland Mountain Deer Chase
+// from Old Time Fiddle for the Complete Ignoramus by Wayne Erbsen
+
+Tempo 96
+
+Groove Metronome2-4
+z * 2
+
+Groove OldTime3
+
+Repeat
+// Section A
+1 D G D /
+2 A / D /
+3 D G D /
+4 A / D /
+// Section B
+5 A / D /
+6 A / D /
+7 D G D /
+8 A / D /
+RepeatEnd
