@@ -1,0 +1,48 @@
+Tempo 108
+
+Drum-Clap Tone HandClap
+Drum-Clap Riff 1 0 127 * 4
+z
+
+//Intro
+Groove StandardRock2A
+1 Bb
+2 Bbsus4
+3 Bb
+4 Bbsus4
+
+// Verse 1&2
+Repeat
+1 Bb
+2 /
+3 Eb/Bb
+4 /
+5 Bb 
+6 Fsus4
+7 Bb 
+8 Bbsus4
+RepeatEnd
+
+//Chorus
+Repeat
+1 Bb 
+2 Eb 
+3 Bb 
+4 /
+5 F
+6 /
+RepeatEnding
+7 Bb 
+8 Bbsus4
+RepeatEnd
+Repeat
+9  Ab 
+10 Eb 
+RepeatEnding
+11 Bbsus4 
+12 Bb 
+RepeatEnd
+11 Bb 
+12 /
+
+// Verse 3

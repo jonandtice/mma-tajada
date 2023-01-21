@@ -23,6 +23,11 @@ Begin Drum Define
     K1  1.0 0 101; 3.0 0 108
     K2  1.0 0 108; 3.0 0 102; 3.5 0 90
     K3  1.0 0 108; 3.0 0 108; 3.5 0 90; 4.5 0 72
+    KA  D1 * 4
+    SA  4.0 0 90
+    CHA 1.0 0 40; 1.25 0 40; 2.25 0 40; 3.0 0 40; 3.25 0 40; 4.25 0 40
+    PHA 2.0 0 60; 2.75 0 60; 4.0 0 60; 4.75 0 60;
+    OHA 1.5 0 50; 1.75 0 80; 2.5 0 90; 3.5 0 50; 3.75 0 80; 4.5 0 80;
 End
 
 Begin Bass Define
@@ -61,6 +66,8 @@ Begin Plectrum Define
     S2  S1; 2.1 0 0
     S3  1.0 +3 90; 2.0 +3 80; 3.5 -3 60; 4.0 +3 80; 4.5 -3 60
     S4  1.0 +3 90; 1.5 +3 80; 2.0 +3 80; 2.75 -3 70; 3.25 -3 70; 3.5 +3 80; 3.75 -3 70; 4.0 +3 80; 4.5 +3 80; 4.75 -3 70
+    SA  1.0 +1 90; 1.5 +1 60; 1.75 -1 60; 2.0 +1 60; 2.25 -1 60; 2.5 +1 80; \
+        3.0 +1 60; 3.25 -1 60; 3.5 +1 60; 3.75 -1 60; 4.0 +1 60; 4.25 -1 60; 4.5 +1 60; 4.75 -1 50
 End
 
 Begin Chord Define
@@ -68,31 +75,37 @@ Begin Chord Define
     C8 C1 * 8
 End
 
-// StandardRockA
+// StandardRock2A
 SeqClear
 SeqSize 4
 
 Begin Drum-Kick
     Tone KickDrum1
-    Sequence K3
+    Sequence KA
     RTime -4,0
     RVolume 10
 End
 Begin Drum-Snare
     Tone SnareDrum1
-    Sequence S1
+    Sequence SA
     RTime 4
     RVolume 10
 End
-Begin Drum-HH
+Begin Drum-OH
     Tone OpenHiHat
-    Sequence HH1 HH2 HH4
+    Sequence OHA
+    RTime 4
+    RVolume 10
+End
+Begin Drum-CH
+    Tone ClosedHiHat
+    Sequence CHA
     RTime 4
     RVolume 10
 End
 Begin Drum-PH
     Tone PedalHiHat
-    Sequence PH1 PH2 PH1 PH4
+    Sequence PHA
     RTime 4
     RVolume 10
 End
@@ -105,7 +118,7 @@ End
 
 Begin Bass
     Voice FingeredBass
-    Sequence B1 B2 B1 B2
+    Sequence B0
     RTime 4
     RVolume 5
 End
@@ -113,7 +126,7 @@ End
 Begin Plectrum
     Voice SteelGuitar   // Basic acoustic guitar sound
     Articulate 1        // Make sure "strings" don't ring past next chord change
-    Sequence S1
+    Sequence SA
     Volume p
 End
 
@@ -123,7 +136,7 @@ Begin Chord-Organ
     Articulate 96
     Octave 5
     Voicing Mode=Optimal Center=8
-    Volume pppp
+    Volume ppp
 End
 
 Begin Bass-PMGuitar
@@ -132,12 +145,12 @@ Begin Bass-PMGuitar
     Articulate 75
     RTime 4
     RVolume 5
-    Volume mp
+    Volume ppp
 End
 
-DefGroove StandardRockA
+DefGroove StandardRock2A
 
-// StandardRockB
+// StandardRock2B
 SeqClear
 SeqSize 4
 
@@ -189,9 +202,9 @@ Begin Chord-Organ
     Volume ppp
 End
 
-DefGroove StandardRockB
+DefGroove StandardRock2B
 
-// StandardRockC
+// StandardRock2C
 SeqClear
 SeqSize 4
 
@@ -237,9 +250,8 @@ End
 Begin Plectrum
     Voice SteelGuitar   // Basic acoustic guitar sound
     Articulate 1        // Make sure "strings" don't ring past next chord change
-    Sequence S3 S1 S3 S1
-    Accent {1 -10 2 25}{}{1 -10 2 25}{}
-    Volume pp
+    Sequence SA
+    Volume p
 End
 
 Begin Chord-Organ
@@ -248,12 +260,12 @@ Begin Chord-Organ
     Articulate 96
     Octave 5
     Voicing Mode=Optimal Center=8
-    Volume ppp
+    Volume pppp
 End
 
-DefGroove StandardRockC
+DefGroove StandardRock2C
 
-// StandardRockD
+// StandardRock2D
 SeqClear
 SeqSize 4
 
@@ -327,4 +339,4 @@ Begin Chord-Organ
     Volume p
 End
 
-DefGroove StandardRockD
+DefGroove StandardRock2D
