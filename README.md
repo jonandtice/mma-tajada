@@ -18,14 +18,14 @@ See https://github.com/jonandtice/mma-support for my syntax hilighting plugin. T
 
 ### Running MMA Commands
 
-See [.vscode/tasks.jason](https://github.com/jonandtice/mma-tajada/blob/master/.vscode/tasks.json) for how to use VS Code _tasks_ to run mma commands.
+See [.vscode/tasks.jason](https://github.com/jonandtice/mma-tajada/blob/master/.vscode/tasks.json) for an example on how to use VS Code _tasks_ to run mma commands.
 The two tasks are _play_ and _build_.
 
 #### Play
 
-Runs `mma -P $(relativeFile)` $(relativeFile) becomes the file the task is run from.
+Runs `mma -P $(relativeFile)`, where _$(relativeFile)_ becomes the file the task is run from.
 
-This depends on your default midi player being correctly configured in MMA's preferences. Suggestion is to add ```SetMIDIplayer fluidsynth -ni -a pulseaudio``` to the `~/.mmarc` file (which is one of the files mma uses to load configurations).
+This depends on your default midi player being correctly configured in MMA's preferences. Suggestion is to add ```SetMIDIplayer fluidsynth -ni -a pulseaudio``` to an [RC File](https://mellowood.ca/mma/online-docs/html/ref/node33.html#sec-rc) (like `~/.mmarc`).
 
 #### Build
 
